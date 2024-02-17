@@ -6,15 +6,15 @@ Questo step preliminare ci permetterà di verificare che tutti abbiano un ambien
 
 ## Obiettivi
 
-1. [ ] Compilare un semplice programma che *non* usa SFML.
+1. [ ] Compilare un semplice programma senza alcuna dipendenza.
 
-2. [ ] Compilare un semplice programma che usa SFML.
+2. [ ] Compilare un semplice programma che dipende da SFML.
 
 ## Svolgimento
 
 ### Obiettivo 1
 
-Per prima cosa assicuratevi di avere un ambiente di sviluppo dove poter compilare un programma in C++ senza alcuna dipendenza. Personalmente io uso [MSYS2/MinGW](https://www.msys2.org/) su Windows 10, ma va bene qualsiasi cosa (e.g. Visual Studio, WSL2, una distribuzione Linux con `gcc` o `clang`, etc).
+Per prima cosa assicuratevi di avere un ambiente di sviluppo dove poter compilare un programma in C++ senza alcuna dipendenza. Personalmente io uso [MSYS2/MinGW](https://www.msys2.org/) su Windows 10, ma va bene qualsiasi cosa *(e.g. Visual Studio, WSL2, una distribuzione Linux con `gcc` o `clang`, etc)*.
 
 Per esempio, il seguente programma (vedi [`code/main_without_sfml.cpp`](./code/main_without_sfml.cpp))
 
@@ -63,11 +63,14 @@ Per compilare tale programma bisogna agguingere la cartella `SFML/include` tra l
 g++ -Wall -Wextra -Wpedantic -std=c++17 \
     -I<DIRECTORY_DI_SFML>/include \
     -L<DIRECTORY_DI_SFML>/lib \
+    ./main_with_sfml.cpp \
     -lsfml-graphics -lsfml-window -lsfml-system \
-    ./main_with_sfml.cpp -o ./main_with_sfml.exe
+    -o ./main_with_sfml.exe
 
 ./main_with_sfml.exe
 ```
+
+L'ordine delle librerie è significativo, e tutte le librerie devono apparire dopo il file `.cpp` nel comando di compilazione.
 
 Se invece usate Visual Studio, dovete seguire [**queste istruzioni**](https://www.sfml-dev.org/tutorials/2.6/start-vc.php) per includere e linkare SFML.
 

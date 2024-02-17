@@ -21,9 +21,20 @@ In questo step visualizzeremo una pallina statica sulla finestra.
 `sf::RenderWindow` deve essere pulita tramite [`sf::RenderWindow::clear`](https://www.sfml-dev.org/documentation/2.6.1/classsf_1_1RenderTarget.php#a6bb6f0ba348f2b1e2f46114aeaf60f26) all'inizio di ogni frame di rendering. Dopo tale operazione, si possono iniziare a renderizzare vari elementi sulla finestra. Dopo aver finito, bisogna comunicare alla finestra di visualizzare tutto ciò che è stato renderizzato tramite [`sf::RenderWindow::display`](https://www.sfml-dev.org/documentation/2.6.1/classsf_1_1Window.php#adabf839cb103ac96cfc82f781638772a):
 
 ```cpp
-window.clear();
-// ...renderizziamo roba...
-window.display();
+// ...
+
+while (window.isOpen())
+{
+    // ...
+
+    window.clear();
+    // ...renderizziamo roba...
+    window.display();
+
+    // ...
+}
+
+// ...
 ```
 
 ### Obiettivo 2

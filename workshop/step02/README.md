@@ -21,7 +21,11 @@ La classe SFML che rappresenta una finestra è [`sf::RenderWindow`](https://www.
 
 int main()
 {
+//     nome della variabile
+//                   v~~~~~
     sf::RenderWindow window(sf::VideoMode(800, 600), "Arkanoid");
+//  ^~~~~~~~~~~~~~~~        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//  tipo della variabile    argomenti del costruttore
 }
 ```
 

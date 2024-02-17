@@ -16,6 +16,12 @@ Al momento, la pallina scompare della finestra perché non gestiamo nessuna coll
 
 Ogni frame, controllate la posizione di alcuni punti chiave della pallina rispetto alle coordinate della finestra, e cambiate la velocità di conseguenza. In SFML, il sistema di coordinate inizia con `{0, 0}` in alto a sinistra, e finisce con `{risoluzioneX, risoluzioneY}` in basso a destra.
 
+Considerazioni:
+
+- Che coordinate usare per controllare le collisioni della pallina? Il centro della pallina non è una scelta ideale.
+
+- Quando avviene una collisione, come evitare che la stessa collisione venga individuata ripetutamente anche nel frame successivo?
+
 ## Risorse
 
 - Documentazione `sf::CircleShape`: https://www.sfml-dev.org/documentation/2.6.1/classsf_1_1CircleShape.php

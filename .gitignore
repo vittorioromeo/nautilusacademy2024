@@ -42,3 +42,6 @@ build/
 
 # Slide lock file
 ~$slides.pptx
+
+build/
+*.exe

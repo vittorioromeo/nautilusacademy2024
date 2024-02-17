@@ -12,7 +12,22 @@ In questo step creeremo una griglia di mattoncini che sarà renderizzata sulla f
 
 ### Obiettivo 1
 
-Il principio è simile alla creazione del rettangolo del giocatore, ma dobbiamo farlo tante volte ed in una formazione a griglia. Possiamo usare `std::vector` per creare una collezione di mattoncini dinamica.
+Il principio è simile alla creazione del rettangolo del giocatore, ma dobbiamo farlo tante volte ed in una formazione a griglia. Possiamo usare `std::vector` per creare una collezione di mattoncini dinamica, ed usare `sf::RectangleShape` per rappresentare ogni mattoncino.
+
+```cpp
+// Array dinamico di `sf::RectangleShape`:
+std::vector<sf::RectangleShape> bricks;
+
+// ...
+
+sf::RectangleShape brick;
+// ...setup di `brick`...
+
+// ...
+
+// Inserzione del mattoncino dell'array dinamico:
+bricks.push_back(brick);
+```
 
 ## Risorse
 
